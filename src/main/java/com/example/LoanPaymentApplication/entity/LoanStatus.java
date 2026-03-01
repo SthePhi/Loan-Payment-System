@@ -1,2 +1,6 @@
-package com.example.LoanPaymentApplication.entity;public class LoanStatus {
+package com.example.LoanPaymentApplication.entity;
+
+public enum LoanStatus {
+    ACTIVE,
+    SETTLED
 }
