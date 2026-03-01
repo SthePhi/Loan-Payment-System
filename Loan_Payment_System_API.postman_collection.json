@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "8b5f3a1e-8e2b-4d5c-9f8a-7e1d2c3b4a5f",
+		"name": "Loan Payment System API",
+		"description": "API collection for managing loans and payments in the Loan Payment System.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Loan Domain",
+			"item": [
+				{
+					"name": "Create Loan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"loanAmount\": 1000.00,\n    \"term\": 12\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/loans",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"loans"
+							]
+						},
+						"description": "Creates a new loan with a specified loan amount and term."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loan Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/loans/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"loans",
+								"1"
+							]
+						},
+						"description": "Retrieves the details of a loan by its ID."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment Domain",
+			"item": [
+				{
+					"name": "Record Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"loanId\": 1,\n    \"paymentAmount\": 300.00\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/payments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments"
+							]
+						},
+						"description": "Records a payment made towards a loan."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
